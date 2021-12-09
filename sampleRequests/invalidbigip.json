@@ -1,0 +1,12 @@
+{
+    "id": "a57c5db44c9b53d045a252b2e22e102e",
+    "request_body": {
+        "fqdn": "bar.com",
+        "poolMembers": [
+            "10.4.3.200:80:enabled",
+            "10.4.3.201:80:enabled"
+        ],
+        "vsPort": "2222",
+        "snat": "auto"
+    }
+}
