@@ -14,19 +14,14 @@ Config File ".pbo" Not Found in "[/Users/nanda]"
 ^[[OSuccesfully Pushed Configuration
 ```
 - Start Server:
+```sh
+# python server.py
 ```
-(venv37)  ✘host  ~/PycharmProjects/As3Converter   main  python3.9 ProgrammableBIGIPOrchestrator.py
-^[[O127.0.0.1 - - [09/Dec/2021 19:01:14] "POST / HTTP/1.1" 200 -
-Received request
-
-Processing request of BIGIP:10.145.69.216
-Pushed successfully to BIGIP: 10.145.69.216
-
-
-Processing request
-BIGIP 10.145.251.1 is not alive
-
-
-Processing request of BIGIP:10.144.75.221
-Pushed successfully to BIGIP: 10.144.75.221
+- Start Redis
+```sh
+# docker run --name=redis-pbo --publish=6379:6379 --hostname=redis --restart=on-failure --detach redis:latest
+```
+- Start Celery Worker
+```sh
+# celery -A server.celery worker --loglevel=INFO
 ```
